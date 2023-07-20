@@ -59,5 +59,8 @@ Click in the button of Assign People
     SECRET_KEY=super_secret_key
 ```
 
+# How to test it?
+You should navigate to `http://localhost:3012/dashboard` and it should redirect to a login Okta form. Once that you have already inserted your credentials it should allow you visit the `http://localhost:3012/dashboard` page.
+
 # TODO
 Discover how to use the Relay State ?
