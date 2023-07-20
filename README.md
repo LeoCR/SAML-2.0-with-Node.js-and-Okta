@@ -47,7 +47,7 @@ Click in the button of Assign People
 ### L. Assign Everyone
 <img src="screenshots/12-assign-everyone.png"/>
 
-4. Finally you will need to paste some of the values shown before so in the root of this project create a `.env` file with this keys, and paste the values that you saw in the screenshots:
+4. Then you will need to paste some of the values shown before so in the root of this project create a `.env` file with this keys, and paste the values that you saw in the screenshots:
 
 ```
     ISSUER=http://localhost:3012
@@ -58,6 +58,8 @@ Click in the button of Assign People
     ALGORITHM=sha2
     SECRET_KEY=super_secret_key
 ```
+
+5. Finally run this command in your terminal: `npm run start` or `npm run dev`
 
 # How to test it?
 You should navigate to `http://localhost:3012/dashboard` and it should redirect to a login Okta form. Once that you have already inserted your credentials it should allow you visit the `http://localhost:3012/dashboard` page.
