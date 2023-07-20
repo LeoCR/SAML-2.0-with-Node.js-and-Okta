@@ -7,9 +7,9 @@ const cookieParser = require("cookie-parser");
 const session = require('express-session');
 const passport = require("passport");
 const app = express();
-const port = 3012;
+const port = process.env.PORT;
 const SamlStrategy = require("@node-saml/passport-saml").Strategy;
-const certificatePath = path.join(__dirname, "/private/okta-v2.cert");
+const certificatePath = path.join(__dirname, "/private/okta.cert");
 const certFile = fs.readFileSync(certificatePath, "utf8", (err, data) => {
   if (err) {
     console.error("Error reading certificate file:", err);
@@ -118,11 +118,12 @@ app.get("/dashboard", (req, res) => {
 
 // Logout route
 app.get("/logout", function (req, res, next) {
-  req.logout(function (err) {
+  req.session.destroy((err) => {
     if (err) {
-      return next(err);
+      res.status(400).send("Unable to log out");
+    } else {
+      res.send("Logout successful");
     }
-    res.redirect("/");
   });
 });
 

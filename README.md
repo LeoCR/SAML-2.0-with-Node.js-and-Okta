@@ -80,6 +80,7 @@ Click in the button of Assign People
     AUDIENCE=http://localhost:3012
     ALGORITHM=sha2
     SECRET_KEY=super_secret_key
+    PORT=3012 
 ```
 
 5. Finally run this command in your terminal: `npm run start` or `npm run dev`
