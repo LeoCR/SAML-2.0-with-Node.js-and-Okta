@@ -40,7 +40,9 @@ passport.use(
 <img src="screenshots/04-set-a-name.png"/>
 
 ### E. Set the Audience URL
-Use this URL in the `.env` file.
+Use this Sign on URL: `http://localhost:3012/login/callback` , and paste it in the `.env` file as `CALLBACK_URL`.
+
+For the Audience we are going to use this URL `http://localhost:3012` and paste it in the `.env` file as `AUDIENCE`
 <img src="screenshots/05-audience.png" />
 
 ### F. Click Finish
@@ -50,11 +52,11 @@ Use this URL in the `.env` file.
 <img src="screenshots/07-signon.png" />
 
 ### H. Copy the SSO URL
-Use this URL in the `.env` file.
+Use this Sign on URL in the `.env` file as `ENTRY_POINT`
 <img src="screenshots/08-sso.png"/>
 
 ### I. Copy the Logut URL
-Use this URL in the `.env` file.
+Use this Sign out URL in the `.env` file as `LOGOUT_URL` and Download the Certificate, then paste the certificate in the private folder.
 <img src="screenshots/09-logout.png"/>
 
 ### J. Navigate to assignments tab
@@ -68,7 +70,7 @@ Click in the button of Assign People
 ### L. Assign Everyone
 <img src="screenshots/12-assign-everyone.png"/>
 
-4. Then you will need to paste some of the values shown before so in the root of this project create a `.env` file with this keys, and paste the values that you saw in the screenshots:
+4. Then in the root of this project you should have `.env` file with this keys based in the values that you saw in the screenshots:
 
 ```
     ISSUER=http://localhost:3012
