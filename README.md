@@ -2,6 +2,27 @@
 
 For this project I am using Okta in order to autenticate users with SSO.The purpose of this project is understand how we can implement SAML 2.0 in Node.js.
 
+```js
+// Passport configuration
+passport.use(
+  new SamlStrategy(
+    {
+      path: process.env.CALLBACK_URL,
+      audience: process.env.AUDIENCE,
+      signatureAlgorithm: process.env.ALGORITHM,
+      logoutUrl: process.env.LOGOUT_URL,
+      entryPoint: process.env.ENTRY_POINT,
+      issuer: process.env.ISSUER,
+      protocol: "http://",
+      cert: certFile, // cert must be provided
+    },
+    function (profile, done) {
+      return done(null, profile);
+    }
+  )
+);
+```
+
 ## Configuration
 1. Install the Node Packages Modules executing: `npm install`.
 2. Go to <a href="https://developer.okta.com/" title="Okta Developers" target="_blank">Okta Developers Website</a>  and sign in or create an account.
